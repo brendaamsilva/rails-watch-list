@@ -22,5 +22,4 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name)
   end
 
-
 end

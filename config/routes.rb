@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'bookmark/new'
+  get 'bookmark/create'
+  get 'bookmark/destroy'
   get 'lists/index'
   get 'lists/show'
   get 'lists/new'
@@ -20,5 +23,10 @@ Rails.application.routes.draw do
   get "lists/new", to: "lists#new", as: :new_list
   post "lists", to: "lists#create"
 
+  # A user can add a new bookmark (movie/list pair) to an existing list
+  get "lists/:id/bookmarks/new", to: "bookmarks#new", as: :new_list_bookmark
+  post "lists/:id/bookmarks", to: "bookmarks#create", as: :list_bookmarks
 
+  # A user can delete a bookmark from a list
+  delete "bookmarks/:id", to: "bookmarks#destroy"
 end

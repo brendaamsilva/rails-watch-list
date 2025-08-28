@@ -18,3 +18,4 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 List.create(title:"chick flick")
 List.create(title:"action")
 List.create(title:"vila maria classics")
+Bookmark.create()
