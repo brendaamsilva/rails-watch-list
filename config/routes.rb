@@ -28,5 +28,13 @@ Rails.application.routes.draw do
   post "lists/:id/bookmarks", to: "bookmarks#create", as: :list_bookmarks
 
   # A user can delete a bookmark from a list
-  delete "bookmarks/:id", to: "bookmarks#destroy"
+  delete "bookmarks/:id", to: "bookmarks#destroy", as: :bookmark
+
+  # resources :lists, only: [:index, :show, :new, :create] do
+  #   resources :bookmarks, only: [:new, :create]
+  # end
+  # resources :bookmarks, only: :destroy
+
+
+
 end
