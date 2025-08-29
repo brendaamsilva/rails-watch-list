@@ -1,10 +1,13 @@
 <h1><%= @list.name %></h1>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 <% @list.bookmarks.each do |bookmark| %>
    <p><%= bookmark.movie.title %> <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bookmark),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %></p>
 <% end %>
 
+<div class="container mt-3">
 <%= link_to "Back to lists", lists_path, class: "btn btn-primary btn-sm" %>
 <%= link_to "New list", new_list_path, class: "btn btn-primary btn-sm" %>
 <%= link_to "Add movie to this list", new_list_bookmark_path(@list), class: "btn btn-primary btn-sm" %>
+</div>
